@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="23504" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="23506"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Pages Home Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController storyboardIdentifier="PagesHomeController" id="BYZ-38-t0r" customClass="PagesHomeController" customModule="ScrollPageView" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gj7-Zj-4v9">
+                                <rect key="frame" x="0.0" y="59" width="393" height="759"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="24" translatesAutoresizingMaskIntoConstraints="NO" id="3IT-Td-ydQ">
+                                        <rect key="frame" x="0.0" y="0.0" width="393" height="455"/>
+                                        <subviews>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="3q4-gP-NGO">
+                                                <rect key="frame" x="0.0" y="0.0" width="393" height="32"/>
+                                                <segments>
+                                                    <segment title="First"/>
+                                                    <segment title="Second"/>
+                                                    <segment title="Third"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="switchPageAction:" destination="BYZ-38-t0r" eventType="valueChanged" id="oQE-49-wah"/>
+                                                </connections>
+                                            </segmentedControl>
+                                            <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6n9-64-Ejg">
+                                                <rect key="frame" x="0.0" y="55" width="393" height="400"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="400" id="tTZ-D7-VnP"/>
+                                                </constraints>
+                                            </containerView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="3IT-Td-ydQ" firstAttribute="leading" secondItem="gj7-Zj-4v9" secondAttribute="leading" id="Kc4-vJ-qMK"/>
+                                    <constraint firstItem="3IT-Td-ydQ" firstAttribute="top" secondItem="gj7-Zj-4v9" secondAttribute="top" id="cDR-11-16T"/>
+                                    <constraint firstAttribute="trailing" secondItem="3IT-Td-ydQ" secondAttribute="trailing" id="g5W-17-Y17"/>
+                                    <constraint firstAttribute="bottom" secondItem="3IT-Td-ydQ" secondAttribute="bottom" id="pHT-HG-FEd"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="3IT-Td-ydQ" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="9SU-7A-v8T"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gj7-Zj-4v9" secondAttribute="bottom" id="Igy-B9-DwF"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="gj7-Zj-4v9" secondAttribute="trailing" id="MmK-6c-R9P"/>
+                            <constraint firstItem="gj7-Zj-4v9" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="X6R-xA-2ED"/>
+                            <constraint firstItem="gj7-Zj-4v9" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="n3p-KA-7wX"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="pageContainer" destination="6n9-64-Ejg" id="rbC-Rv-ZhV"/>
+                        <outlet property="pageSwitchSegment" destination="3q4-gP-NGO" id="uDB-cT-Zec"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-28" y="4"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
